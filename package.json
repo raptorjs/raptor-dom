@@ -1,5 +1,4 @@
 {
-    "path": "/Users/psteeleidem/development/github/raptorjs3/raptor-dom/package.json",
     "name": "raptor-dom",
     "description": "Utility functions for working with the DOM",
     "repository": {
@@ -22,5 +21,5 @@
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
-    "version": "0.2.1-beta"
+    "version": "0.2.2-beta"
 }
