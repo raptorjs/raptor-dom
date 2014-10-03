@@ -3,7 +3,7 @@
   "description": "Utility functions for working with the DOM",
   "repository": {
     "type": "git",
-    "url": "https://github.com/raptorjs3/raptor-dom.git"
+    "url": "https://github.com/raptorjs/raptor-dom.git"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --ui bdd --reporter spec  ./test"
