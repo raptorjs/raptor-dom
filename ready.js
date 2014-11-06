@@ -16,6 +16,7 @@
     This version: Patrick Steele-Idem
     - Converted to CommonJS module
     - Code cleanup
+    - Fixes for IE <=10
 */
 
 var isReady = false;

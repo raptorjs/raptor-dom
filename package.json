@@ -1,25 +1,27 @@
 {
-    "name": "raptor-dom",
-    "description": "Utility functions for working with the DOM",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/raptorjs/raptor-dom.git"
-    },
-    "scripts": {
-        "test": "node_modules/.bin/mocha --ui bdd --reporter spec  ./test"
-    },
-    "author": "Patrick Steele-Idem <pnidem@gmail.com>",
-    "maintainers": "Patrick Steele-Idem <pnidem@gmail.com>",
-    "dependencies": {},
-    "devDependencies": {
-        "mocha": "~1.15.1",
-        "chai": "~1.8.1"
-    },
-    "license": "Apache License v2.0",
-    "bin": {},
-    "main": "lib/raptor-dom.js",
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
-    },
-    "version": "1.0.2"
+  "name": "raptor-dom",
+  "description": "Utility functions for working with the DOM",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raptorjs/raptor-dom.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --ui bdd --reporter spec  ./test"
+  },
+  "author": "Patrick Steele-Idem <pnidem@gmail.com>",
+  "maintainers": "Patrick Steele-Idem <pnidem@gmail.com>",
+  "dependencies": {
+    "try-require": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.15.1",
+    "chai": "~1.8.1"
+  },
+  "license": "Apache License v2.0",
+  "bin": {},
+  "main": "./raptor-dom.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "version": "1.0.2"
 }

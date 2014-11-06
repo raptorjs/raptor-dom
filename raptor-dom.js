@@ -1,12 +1,5 @@
-var raptorPubsub;
-try {
-    raptorPubsub = require.resolve('raptor-pubsub');
-}
-catch(e) {}
-
-if (raptorPubsub) {
-    raptorPubsub = require(raptorPubsub);
-}
+var tryRequire = require('try-require');
+var raptorPubsub = tryRequire('raptor-pubsub', require);
 
 function getNode(el) {
     if (typeof el === 'string') {
@@ -117,6 +110,6 @@ if (jquery) {
     dom.ready = require('./raptor-dom_documentReady');
 }
 */
-dom.ready = require('./raptor-dom_documentReady');
+dom.ready = require('./ready');
 
 module.exports = dom;
