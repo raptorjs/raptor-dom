@@ -52,9 +52,16 @@ var dom = {
     },
     removeChildren: function (parentEl) {
         parentEl = getNode(parentEl);
-        dom.forEachChildEl(parentEl, function (childEl) {
-            _beforeRemove(childEl);
-        });
+
+        var i = 0;
+        var childNodes = parentEl.childNodes;
+        var len = childNodes.length;
+        for (; i < len; i++) {
+            var childNode = childNodes[i];
+            if (childNode && childNode.nodeType === 1) {
+                _beforeRemove(childNode);
+            }
+        }
         parentEl.innerHTML = '';
     },
     replace: function (newChild, replacedChild) {
