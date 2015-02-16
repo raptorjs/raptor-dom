@@ -19,9 +19,10 @@
     },
     "license": "Apache License v2.0",
     "bin": {},
-    "main": "./raptor-dom.js",
+    "main": "./raptor-dom-server.js",
+    "browser": "./raptor-dom-client.js",
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
-    "version": "1.0.4"
+    "version": "1.1.0"
 }
