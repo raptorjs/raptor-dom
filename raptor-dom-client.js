@@ -1,5 +1,4 @@
-var tryRequire = require('try-require');
-var raptorPubsub = tryRequire('raptor-pubsub', require);
+var raptorPubsub = require('raptor-pubsub');
 
 function getNode(el) {
     if (typeof el === 'string') {

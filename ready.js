@@ -35,8 +35,6 @@ function domReadyCallback() {
     listeners = null;
 }
 
-
-
 // Handle when the DOM is ready
 function domReady() {
     // Make sure that the DOM is not already loaded
