@@ -14,15 +14,17 @@ function getNode(el) {
 
 function _beforeRemove(referenceEl) {
     if (raptorPubsub) {
-        raptorPubsub.emit('dom/beforeRemove', { el: referenceEl });
+        raptorPubsub.emit('dom/beforeRemove', {
+            el: referenceEl
+        });
     }
 }
 
 var dom = {
-    forEachChildEl: function (node, callback, scope) {
+    forEachChildEl: function(node, callback, scope) {
         dom.forEachChild(node, callback, scope, 1);
     },
-    forEachChild: function (node, callback, scope, nodeType) {
+    forEachChild: function(node, callback, scope, nodeType) {
         if (!node) {
             return;
         }
@@ -36,21 +38,21 @@ var dom = {
             }
         }
     },
-    detach: function (child) {
+    detach: function(child) {
         child = getNode(child);
         child.parentNode.removeChild(child);
     },
-    appendTo: function (newChild, referenceParentEl) {
+    appendTo: function(newChild, referenceParentEl) {
         getNode(referenceParentEl).appendChild(getNode(newChild));
     },
-    remove: function (el) {
+    remove: function(el) {
         el = getNode(el);
         _beforeRemove(el);
         if (el.parentNode) {
             el.parentNode.removeChild(el);
         }
     },
-    removeChildren: function (parentEl) {
+    removeChildren: function(parentEl) {
         parentEl = getNode(parentEl);
 
         var i = 0;
@@ -64,24 +66,24 @@ var dom = {
         }
         parentEl.innerHTML = '';
     },
-    replace: function (newChild, replacedChild) {
+    replace: function(newChild, replacedChild) {
         replacedChild = getNode(replacedChild);
         _beforeRemove(replacedChild);
         replacedChild.parentNode.replaceChild(getNode(newChild), replacedChild);
     },
-    replaceChildrenOf: function (newChild, referenceParentEl) {
+    replaceChildrenOf: function(newChild, referenceParentEl) {
         referenceParentEl = getNode(referenceParentEl);
-        dom.forEachChildEl(referenceParentEl, function (childEl) {
+        dom.forEachChildEl(referenceParentEl, function(childEl) {
             _beforeRemove(childEl);
         });
         referenceParentEl.innerHTML = '';
         referenceParentEl.appendChild(getNode(newChild));
     },
-    insertBefore: function (newChild, referenceChild) {
+    insertBefore: function(newChild, referenceChild) {
         referenceChild = getNode(referenceChild);
         referenceChild.parentNode.insertBefore(getNode(newChild), referenceChild);
     },
-    insertAfter: function (newChild, referenceChild) {
+    insertAfter: function(newChild, referenceChild) {
         referenceChild = getNode(referenceChild);
         newChild = getNode(newChild);
         var nextSibling = referenceChild.nextSibling;
@@ -92,7 +94,7 @@ var dom = {
             parentNode.appendChild(newChild);
         }
     },
-    prependTo: function (newChild, referenceParentEl) {
+    prependTo: function(newChild, referenceParentEl) {
         referenceParentEl = getNode(referenceParentEl);
         referenceParentEl.insertBefore(getNode(newChild), referenceParentEl.firstChild || null);
     }
